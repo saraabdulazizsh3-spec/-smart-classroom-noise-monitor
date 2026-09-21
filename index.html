@@ -3,54 +3,120 @@
 <title>Smart Classroom Noise Monitor — Riyadh School 6/B</title>
 <style>
 :root{--navy:#123c91;--blue:#2f7cf6;--sky:#eaf4ff;--green:#18b96f;--yellow:#ffbd18;--red:#ff424f;--ink:#113675;--muted:#60769d}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(#f7fbff,#edf6ff);color:var(--ink)}.page{max-width:980px;margin:auto}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(145deg,#e9f8e7 0%,#f4fbef 48%,#e1f5dc 100%);color:var(--ink)}.page{max-width:980px;margin:auto}
 .top{background:#fff;border-radius:0 0 28px 28px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 6px 20px #184b8b0d}.school{display:flex;align-items:center;gap:13px}.book{font-size:45px}.school b{font-size:27px}.school span{display:block;font-size:20px;color:#657aa3}.motto{background:#ffeaf5;border-radius:999px;padding:12px 22px;text-align:center;font-weight:700}
 .hero{text-align:center;padding:30px 22px 8px}.hero h1{font-size:clamp(40px,7vw,68px);line-height:.96;margin:0;color:#123d91}.hero p{font-size:20px;color:#62779d}.scene{display:grid;grid-template-columns:150px 1fr 150px;gap:18px;align-items:center}.note{padding:18px 10px;border-radius:8px;font-size:18px;line-height:1.5;box-shadow:0 8px 18px #163e7b18}.pink{background:#ffdce9}.yellowNote{background:#fff1bc}.boardWrap{background:#eeb46b;padding:14px;border-radius:16px}.board{background:#237969;color:#fff;border:7px solid #b9773f;border-radius:8px;padding:35px 15px;font:30px Georgia,serif;line-height:1.35}.desk{display:flex;justify-content:space-between;align-items:end;padding:13px 18px 2px;font-size:43px}
 .dashboard{padding:18px 26px}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#fff;border-radius:24px;padding:22px;box-shadow:0 9px 25px #17487d12}.card h2{margin:0 0 15px;font-size:22px}.micCircle{width:240px;height:240px;transition:background .25s,border-color .25s,box-shadow .25s;margin:8px auto;border-radius:50%;background:#eef5ff;border:18px solid #d8e8ff;box-shadow:inset 0 0 0 10px #f7fbff;display:grid;place-items:center;cursor:pointer;user-select:none}.micInner{text-align:center}.micIcon{width:105px;height:105px;transition:background .25s,box-shadow .25s;width:105px;height:105px;border-radius:50%;display:grid;place-items:center;background:#2f7cf6;color:#fff;font-size:55px;margin:auto;box-shadow:0 9px 24px #2f7cf64a}.tap{font-size:23px;font-weight:900;margin-top:13px}.hint{text-align:center;color:#60769d;line-height:1.4}.level{font-size:35px;font-weight:900;margin-top:5px}.chart{width:100%;height:260px;background:linear-gradient(#fff,#fbfdff);border-radius:12px}.statusRow{display:grid;grid-template-columns:1.2fr 1fr;margin-top:18px;padding:0}.statusLeft{display:flex;align-items:center;gap:20px}.traffic{background:#34455e;border-radius:14px;padding:10px}.light{width:36px;height:36px;border-radius:50%;margin:7px}.lg{background:#20c777}.ly{background:#ffc51b}.lr{background:#ff414c}.statusBox{flex:1;background:#e7faef;border-radius:16px;text-align:center;padding:18px}.statusBig{font-size:35px;font-weight:900;color:#169653}.legend{border-left:1px solid #e2e9f5;padding-left:25px}.legend div{margin:10px 0}.legend i{display:inline-block;width:23px;height:23px;border-radius:50%;vertical-align:middle;margin-right:8px}
 .info{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.infoCard{border-radius:22px;padding:22px;display:grid;grid-template-columns:55px 1fr;gap:12px;min-height:160px}.infoCard .ico{font-size:43px}.infoCard h3{margin:3px 0;font-size:22px}.infoCard p{margin:7px 0;color:#385a8f;line-height:1.5}.c1{background:#ffeaf2}.c2{background:#e7f3ff}.c3{background:#e7f9ec}.c4{background:#fff4d6}.insight{margin-top:18px;background:#eef6ff;border-radius:18px;padding:16px;line-height:1.5}.footer{margin-top:24px;background:#dcecff;padding:35px 20px;text-align:center;font-size:21px;font-weight:700;border-radius:50% 50% 0 0/30px 30px 0 0}.tiny{font-size:12px;color:#6b7f9f}
 @media(max-width:700px){.page{width:100%}.top{padding:14px 18px}.school b{font-size:20px}.school span{font-size:16px}.motto{font-size:12px;padding:9px 12px}.scene{grid-template-columns:1fr}.note{display:none}.board{font-size:25px;padding:27px 10px}.two{grid-template-columns:1fr}.dashboard{padding:15px}.statusRow{grid-template-columns:1fr}.legend{border-left:0;border-top:1px solid #e2e9f5;padding:16px 0 0;margin-top:16px}.info{grid-template-columns:1fr}.micCircle{width:220px;height:220px}.hero h1{font-size:43px}}
-</style></head>
+@media(max-width:700px){.monitorTop{grid-template-columns:1fr!important}.monitorTop>div:nth-child(2){gap:12px!important}.statusBox{min-width:0!important}}
+</style>
+<style>
+.info{margin-top:18px}
+.infoCard{background:rgba(255,255,255,.88)!important;border:1px solid #d7edd5!important;box-shadow:0 10px 28px rgba(50,110,65,.08)!important}
+.infoCard .ico{font-size:34px!important}
+.board{background:linear-gradient(145deg,#236b49,#19583d)!important}
+</style>
+</head>
 <body><div class="page">
-<header class="top"><div class="school"><div class="book">📖</div><div><b>Riyadh School</b><span>Grade 6/B</span></div></div><div class="motto">💗 A Quieter Classroom<br>A Brighter Tomorrow</div></header>
-<section class="hero"><h1>Smart Classroom<br>Noise Monitor</h1><p>A smarter, calmer, and happier learning environment 💗</p>
-<div class="scene"><div class="note pink">Small Voices<br>Make a Big<br>Difference 💗</div><div class="boardWrap"><div class="board">Calm Classrooms<br>Brighter Minds ♡</div><div class="desk"><span>📚✏️</span><span>🪴</span></div></div><div class="note yellowNote">Good Students<br>Kind Voices<br>Great Days 💗</div></div></section>
+<header class="top"><div class="school"><div class="book">📖</div><div><b>Riyadh School</b><span>Grade 6/B</span></div></div><div class="motto">✨ A Quieter Classroom<br>A Brighter Tomorrow</div></header>
+<section class="hero"><h1>Smart Classroom<br>Noise Monitor</h1><p>A smarter, calmer, and happier learning environment ✨</p>
+<div class="scene"><div class="note pink">Small Voices<br>Make a Big<br>Difference ✨</div><div class="boardWrap"><div class="board">
+  <div style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap">
+    <div>
+      Quiet Classroom,<br><span style="color:#ffe88a">Bright Minds</span>
+      <div style="font-size:19px;margin-top:5px">Listen • Learn • Focus • Grow</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:42px"><span>📚</span><span>💡</span></div>
+  </div>
+</div></div><div class="note yellowNote">Good Students<br>Kind Voices<br>Great Days ✨</div>
+</div></section>
 
 <main class="dashboard">
-<div class="two">
-<section class="card"><h2>〰️ Current Noise Level</h2><div style="display:flex;align-items:center;justify-content:center;gap:18px">
-<div id="micCircle" class="micCircle" onclick="toggleMic()"><div class="micInner"><div id="micIcon" class="micIcon">🎤</div><div id="tap" class="tap">Tap to Start</div><div id="level" class="level">0</div></div></div>
-<div style="background:#34455e;border-radius:18px;padding:10px 8px;box-shadow:0 8px 20px #17345b22">
-<div id="micRed" style="width:38px;height:38px;border-radius:50%;background:#ff424f;margin:7px;opacity:.25"></div>
-<div id="micYellow" style="width:38px;height:38px;border-radius:50%;background:#ffbd18;margin:7px;opacity:.25"></div>
-<div id="micGreen" style="width:38px;height:38px;border-radius:50%;background:#18b96f;margin:7px;opacity:.25"></div>
-</div></div>
-<div class="hint">Press the circle to allow<br>microphone access</div></section>
-<section class="card"><h2>📊 Noise Level Over Time</h2><canvas id="chart" class="chart" width="440" height="260"></canvas><div id="insight" class="insight"><b>🤖 Smart Insight</b><br>Tap the microphone to begin analyzing the classroom sound pattern.</div></section>
-</div>
+<section class="card" style="padding:24px">
+  <div style="display:grid;grid-template-columns:minmax(260px,1fr) minmax(300px,1.15fr);gap:26px;align-items:center" class="monitorTop">
+    <div>
+      <h2 style="text-align:center">〰️ Current Noise Level</h2>
+      <div id="micCircle" class="micCircle" onclick="toggleMic()">
+        <div class="micInner">
+          <div id="micIcon" class="micIcon">🎤</div>
+          <div id="tap" class="tap">Tap to Start</div>
+          <div><span id="level" class="level">0</span> <span style="font-size:22px">/ 100</span></div>
+        </div>
+      </div>
+      <div class="hint">Press the circle to allow microphone access</div>
+    </div>
 
-<section class="card statusRow"><div class="statusLeft"><div class="traffic"><div id="lr" class="light lr" style="opacity:.3"></div><div id="ly" class="light ly" style="opacity:.3"></div><div id="lg" class="light lg" style="opacity:.3"></div></div><div id="statusBox" class="statusBox"><div style="font-size:20px;font-weight:800">Classroom Status</div><div id="status" class="statusBig">Ready</div><div id="statusSub">Tap the microphone to start</div></div></div>
-<div class="legend"><div><i class="lg"></i><b>Calm (0–40)</b><br><span class="tiny">Great for learning!</span></div><div><i class="ly"></i><b>Getting Loud (41–70)</b><br><span class="tiny">Let's lower our voices.</span></div><div><i class="lr"></i><b>Too Loud (71–100)</b><br><span class="tiny">Please be quieter.</span></div></div></section>
+    <div style="display:flex;align-items:center;justify-content:center;gap:22px">
+      <div class="traffic" style="padding:12px;border-radius:18px">
+        <div id="lr" class="light lr" style="opacity:.25"></div>
+        <div id="ly" class="light ly" style="opacity:.25"></div>
+        <div id="lg" class="light lg" style="opacity:.25"></div>
+      </div>
+      <div id="statusBox" class="statusBox" style="min-width:245px;padding:25px 18px">
+        <div style="font-size:21px;font-weight:800">Classroom Status</div>
+        <div id="status" class="statusBig">Ready</div>
+        <div id="statusSub">Tap the microphone to start</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="info"><section class="infoCard c1"><div class="ico">💗</div><div><h3>Why It Matters?</h3><p>A quieter classroom helps everyone focus, reduces distractions, and creates more time for learning.</p></div></section>
-<section class="infoCard c2"><div class="ico">⚙️</div><div><h3>How It Works?</h3><p>The microphone listens to relative classroom sound in real time and gives instant visual feedback.</p></div></section>
-<section class="infoCard c3"><div class="ico">🌱</div><div><h3>Positive Impact</h3><p>Helps students notice noise levels and supports a calmer, happier learning environment.</p></div></section>
-<section class="infoCard c4"><div class="ico">🎯</div><div><h3>Our Goal</h3><p>Calmer classrooms today for brighter futures tomorrow.</p></div></section></div>
+<section class="card" style="margin-top:18px">
+  <h2>📊 Noise Level Over Time</h2>
+  <canvas id="chart" class="chart" width="880" height="260"></canvas>
+  <div style="display:flex;justify-content:space-around;gap:12px;flex-wrap:wrap;margin-top:14px">
+    <div><span style="color:#18b96f;font-size:22px">●</span> <b>Calm (0–40)</b></div>
+    <div><span style="color:#ffbd18;font-size:22px">●</span> <b>Getting Loud (41–70)</b></div>
+    <div><span style="color:#ff424f;font-size:22px">●</span> <b>Too Loud (71–100)</b></div>
+  </div>
+  <div id="insight" class="insight"><b>🤖 Smart Insight</b><br>Tap the microphone to begin analyzing the classroom sound pattern.</div>
+</section>
+
+<div class="info"><section class="infoCard c1"><div class="ico">🧠</div><div><h3>Why It Matters?</h3><p>A quieter classroom helps everyone focus, reduces distractions, and creates more time for learning.</p></div></section>
+<section class="infoCard c2"><div class="ico">👥</div><div><h3>How It Works?</h3><p>The microphone listens to relative classroom sound in real time and gives instant visual feedback.</p></div></section>
+<section class="infoCard c3"><div class="ico">❤️</div><div><h3>Positive Impact</h3><p>Helps students notice noise levels and supports a calmer, happier learning environment.</p></div></section>
+<section class="infoCard c4"><div class="ico">🌱</div><div><h3>Our Goal</h3><p>Calmer classrooms today for brighter futures tomorrow.</p></div></section></div>
 </main>
-<footer class="footer">✨ Together for a Quieter, Kinder, Smarter Tomorrow 💗 ✨<br><span class="tiny">Riyadh School • Grade 6/B • AI Project</span></footer>
+<footer class="footer">✨ Together for a Quieter, Kinder, Smarter Tomorrow ✨ ✨<br><span class="tiny">Riyadh School • Grade 6/B • AI Project</span></footer>
 </div>
 <script>
-let ac,an,stream,raf,running=false,h=[],samples=[];const $=x=>document.getElementById(x),cv=$('chart'),c=cv.getContext('2d');
-function state(v){return v<=40?['Calm','#18b96f','lg','Great for learning!']:v<=70?['Getting Loud','#ffbd18','ly',"Let's lower our voices."]:['Too Loud','#ff424f','lr','Please be quieter.']}
-function draw(){c.clearRect(0,0,440,260);c.font='12px Arial';c.fillStyle='#61759b';c.strokeStyle='#dce6f3';for(let i=0;i<=5;i++){let y=235-i*42;c.beginPath();c.moveTo(35,y);c.lineTo(425,y);c.stroke();c.fillText(i*20,7,y+4)}if(h.length<2)return;c.strokeStyle='#2f7cf6';c.lineWidth=4;c.beginPath();h.forEach((v,i)=>{let x=35+i/Math.max(1,h.length-1)*390,y=235-v*2.1;i?c.lineTo(x,y):c.moveTo(x,y)});c.stroke()}
-function smart(){if(samples.length<20)return;let avg=samples.reduce((a,b)=>a+b,0)/samples.length,red=samples.filter(v=>v>70).length/samples.length;$('insight').innerHTML=red>.25?'<b>🤖 Smart Insight</b><br>Loud moments are frequent. Try a short quiet reset.':avg<=40?'<b>🤖 Smart Insight</b><br>Great job! The classroom has been mostly calm and ready for learning.':'<b>🤖 Smart Insight</b><br>The room is moderately active. Watch for rising noise and lower voices early.'}
-async function startMic(){try{stream=await navigator.mediaDevices.getUserMedia({audio:true});ac=new(window.AudioContext||window.webkitAudioContext)();an=ac.createAnalyser();an.fftSize=1024;ac.createMediaStreamSource(stream).connect(an);running=true;$('micIcon').textContent='⏹️';$('tap').textContent='Tap to Stop';let d=new Uint8Array(an.fftSize);function loop(){if(!running)return;an.getByteTimeDomainData(d);let sum=0;for(let x of d){let z=(x-128)/128;sum+=z*z}let v=Math.min(100,Math.round(Math.sqrt(sum/d.length)*420)),[name,col,light,sub]=state(v);$('level').textContent=v;$('status').textContent=name;$('status').style.color=col;$('statusSub').textContent=sub;$('statusBox').style.background=col+'18';['lg','ly','lr'].forEach(id=>$(id).style.opacity=id===light?'1':'.3');h.push(v);if(h.length>90)h.shift();samples.push(v);if(samples.length>500)samples.shift();draw();smart();raf=requestAnimationFrame(loop)}loop()}catch(e){$('tap').textContent='Allow Microphone';$('insight').innerHTML='<b>⚠️ Microphone Access</b><br>Please allow microphone access in Safari, then tap the circle again.'}}
-function stopMic(){running=false;cancelAnimationFrame(raf);if(stream)stream.getTracks().forEach(t=>t.stop());if(ac)ac.close();$('micIcon').textContent='🎤';$('tap').textContent='Tap to Start';
-$('micCircle').style.borderColor='#d8e8ff';
-$('micCircle').style.background='#eef5ff';
-$('micCircle').style.boxShadow='inset 0 0 0 10px #f7fbff';
-$('micIcon').style.background='#2f7cf6';
-$('micIcon').style.boxShadow='0 9px 24px #2f7cf64a';
-$('tap').style.color='#113675';
-['micGreen','micYellow','micRed'].forEach(id=>$(id).style.opacity='.25');$('status').textContent='Ready';$('status').style.color='#169653';$('statusSub').textContent='Tap the microphone to start';['lg','ly','lr'].forEach(id=>$(id).style.opacity='.3')}
+let ac,an,stream,raf,running=false,h=[],samples=[];
+const $=x=>document.getElementById(x),cv=$('chart'),c=cv.getContext('2d');
+function state(v){
+ if(v<=40)return['Calm','#18b96f','lg','Great job! The classroom is quiet and ready for learning.'];
+ if(v<=70)return['Getting Loud','#ffbd18','ly',"Let's lower our voices."];
+ return['Too Loud','#ff424f','lr',"Let's make it quieter!"];
+}
+function draw(){
+ c.clearRect(0,0,cv.width,cv.height);c.font='12px Arial';c.fillStyle='#61759b';c.strokeStyle='#dce6f3';
+ for(let i=0;i<=5;i++){let y=235-i*42;c.beginPath();c.moveTo(35,y);c.lineTo(cv.width-15,y);c.stroke();c.fillText(i*20,7,y+4)}
+ if(h.length<2)return;
+ let col=state(h[h.length-1])[1];c.strokeStyle=col;c.lineWidth=4;c.beginPath();
+ h.forEach((v,i)=>{let x=35+i/Math.max(1,h.length-1)*(cv.width-50),y=235-v*2.1;i?c.lineTo(x,y):c.moveTo(x,y)});c.stroke();
+}
+function updateUI(v){
+ let[name,col,light,sub]=state(v);
+ $('level').textContent=v;$('status').textContent=name;$('status').style.color=col;$('statusSub').textContent=sub;
+ $('statusBox').style.background=col+'18';
+ $('micCircle').style.borderColor=col;$('micCircle').style.background=col+'22';
+ $('micCircle').style.boxShadow='inset 0 0 0 10px #f7fbff,0 0 28px '+col+'55';
+ $('micIcon').style.background=col;$('tap').style.color=col;
+ ['lg','ly','lr'].forEach(id=>$(id).style.opacity=id===light?'1':'.22');
+}
+function smart(){
+ if(samples.length<20)return;let avg=samples.reduce((a,b)=>a+b,0)/samples.length,red=samples.filter(v=>v>70).length/samples.length;
+ $('insight').innerHTML=red>.25?'<b>🤖 Smart Insight</b><br>Loud moments are frequent. Try a short quiet reset.':avg<=40?'<b>🤖 Smart Insight</b><br>Great job! The classroom has been mostly calm and ready for learning.':'<b>🤖 Smart Insight</b><br>The room is moderately active. Watch for rising noise and lower voices early.';
+}
+async function startMic(){
+ try{
+  stream=await navigator.mediaDevices.getUserMedia({audio:true});ac=new(window.AudioContext||window.webkitAudioContext)();an=ac.createAnalyser();an.fftSize=1024;ac.createMediaStreamSource(stream).connect(an);
+  running=true;$('micIcon').textContent='⏹️';$('tap').textContent='Listening...';let d=new Uint8Array(an.fftSize);
+  function loop(){if(!running)return;an.getByteTimeDomainData(d);let sum=0;for(let x of d){let z=(x-128)/128;sum+=z*z}
+   let v=Math.min(100,Math.round(Math.sqrt(sum/d.length)*420));updateUI(v);h.push(v);if(h.length>100)h.shift();samples.push(v);if(samples.length>500)samples.shift();draw();smart();raf=requestAnimationFrame(loop)}
+  loop();
+ }catch(e){$('tap').textContent='Allow Microphone';$('insight').innerHTML='<b>⚠️ Microphone Access</b><br>Please allow microphone access, then tap the circle again.'}
+}
+function stopMic(){running=false;cancelAnimationFrame(raf);if(stream)stream.getTracks().forEach(t=>t.stop());if(ac)ac.close();$('micIcon').textContent='🎤';$('tap').textContent='Tap to Start';$('level').textContent='0';$('status').textContent='Ready';$('status').style.color='#169653';$('statusSub').textContent='Tap the microphone to start';$('statusBox').style.background='#e7faef';$('micCircle').style.borderColor='#d8e8ff';$('micCircle').style.background='#eef5ff';$('micCircle').style.boxShadow='inset 0 0 0 10px #f7fbff';$('micIcon').style.background='#2f7cf6';$('tap').style.color='#113675';['lg','ly','lr'].forEach(id=>$(id).style.opacity='.22')}
 function toggleMic(){running?stopMic():startMic()}draw();
 </script></body></html>
